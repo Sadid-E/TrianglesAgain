@@ -8,18 +8,26 @@ public class Triangle {
     v3 = c;
   }
 
-   public Triangle(double x1, double y1,double x2, double y2,double x3, double y3) {
+  public Triangle(double x1, double y1,double x2, double y2,double x3, double y3) {
      v1 = new Point(x1,y1);
      v2 = new Point(x2,y2);
      v3 = new Point(x3,y3);
-   }
+  }
 
-   public double getPerimeter() {
-     double distance1 = v1.distanceTo(v2);
-     double distance2 = v2.distanceTo(v3);
-     double distance3 = v3.distanceTo(v1);
-     double perimeter = distance1 + distance2 + distance3;
+  public double getPerimeter() {
+     double side1 = v1.distanceTo(v2);
+     double side2 = v2.distanceTo(v3);
+     double side3 = v3.distanceTo(v1);
+     double perimeter = side1 + side2 + side3;
      return perimeter;
-   }
+  }
+
+  public double getArea() {
+    double side1 = v1.distanceTo(v2);
+    double side2 = v2.distanceTo(v3);
+    double side3 = v3.distanceTo(v1);
+    double area = side1 * side2 * side3;
+    return area;    
+  }
 
 }
