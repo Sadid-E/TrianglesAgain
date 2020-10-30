@@ -26,7 +26,8 @@ public class Triangle {
     double side1 = v1.distanceTo(v2);
     double side2 = v2.distanceTo(v3);
     double side3 = v3.distanceTo(v1);
-    double area = side1 * side2 * side3;
+    double semi = (getPerimeter() / 2);
+    double area = Math.sqrt(semi * (semi - side1) * (semi - side2) * (semi - side3));
     return area;
   }
 
@@ -47,6 +48,18 @@ public class Triangle {
     return "v1(" + v1.getX() + ", " + v1.getY() + ") " +
            "v2(" + v2.getX() + ", " + v2.getY() + ") " +
            "v3(" + v3.getX() + ", " + v3.getY() + ")";
+  }
+
+  public void setVertex(int index, Point newP) {
+    if (index == 0) {
+      v1 = newP;
+    }
+    if (index == 1) {
+      v2 = newP;
+    }
+    if (index == 2) {
+      v3 = newP;
+    }
   }
 
 }
