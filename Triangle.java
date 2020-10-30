@@ -27,7 +27,20 @@ public class Triangle {
     double side2 = v2.distanceTo(v3);
     double side3 = v3.distanceTo(v1);
     double area = side1 * side2 * side3;
-    return area;    
+    return area;
+  }
+
+  public String classify() {
+    double side1 = Math.round(v1.distanceTo(v2) * 10000.0) / 10000.0;
+    double side2 = Math.round(v2.distanceTo(v3) * 10000.0) / 10000.0;
+    double side3 = Math.round(v3.distanceTo(v1) * 10000.0) / 10000.0;
+    if (side1 == side2 && side2 == side3 && side3 == side1){
+      return "equilateral";
+    }
+    if (side1 == side2 || side2 == side3 || side3 == side1){
+      return "isosceles";
+    } else
+      return "scalene";
   }
 
 }
